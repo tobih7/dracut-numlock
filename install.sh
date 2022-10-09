@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DST=/usr/lib/dracut/modules.d/90-numlock/
+DST=/usr/lib/dracut/modules.d/90numlock/
 
 set -e
 
