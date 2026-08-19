@@ -1,6 +1,8 @@
 #!/bin/sh
 
-TTYs=/dev/tty[1-6]
-for tty in $TTYs; do
-    /usr/bin/setleds -D +num <$tty
+for _numlock_tty in /dev/tty[1-8]; do
+    [ -c "$_numlock_tty" ] || continue
+    /usr/bin/setleds -D +num < "$_numlock_tty" 2>/dev/null || :
 done
+
+unset _numlock_tty
